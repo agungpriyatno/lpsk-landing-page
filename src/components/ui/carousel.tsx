@@ -129,7 +129,7 @@ export const Carousel = ({ images }: { images: TCarouselItem[] }) => {
             <Button size={'icon'} variant={'ghost'} className="absolute right-10 top-1/2 translate-y-1/2" onClick={handleNext}>
                 <ChevronRight />
             </Button>
-            <div className="absolute left-10 bottom-10 flex gap-2">
+            <div className="absolute left-10 bottom-14 flex gap-2">
                 {images.map((_, index) => (
                     <div
                         key={index}

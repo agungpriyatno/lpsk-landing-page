@@ -15,6 +15,7 @@ import {
     navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu"
 import { Prettify } from "@/types/utils"
+import { useState } from "react"
 
 export type TMenuItem = {
     title: string,
@@ -57,7 +58,7 @@ export const data: TMenuItem[] = [
                 href: "/information",
                 description: ""
             },
-            
+
         ],
     },
     {
@@ -164,6 +165,16 @@ export const data: TMenuItem[] = [
 
 export const NavigationMenuImpl = () => {
     const menu = data
+    
+    const speech = (message: string) => {
+        if (window['speechSynthesis'] != undefined) {
+            const msg = new SpeechSynthesisUtterance()
+            msg.text = message
+            msg.lang = "id"
+            window.speechSynthesis.speak(msg)
+        }
+    }
+
     return (
         <NavigationMenu className="hidden xl:block">
             <NavigationMenuList>
@@ -171,7 +182,7 @@ export const NavigationMenuImpl = () => {
 
                     if (item.children.length > 0) {
                         return (
-                            <NavigationMenuItem key={i}>
+                            <NavigationMenuItem key={i} onMouseEnter={() => speech(item.title)}>
                                 <NavigationMenuTrigger className="bg-transparent">{item.title}</NavigationMenuTrigger>
                                 <NavigationMenuContent >
                                     <ul className="grid gap-3 p-4 w-[800px] md:grid-cols-2 ">
@@ -190,7 +201,7 @@ export const NavigationMenuImpl = () => {
                         )
                     }
                     return (
-                        <NavigationMenuItem key={i}>
+                        <NavigationMenuItem key={i} onMouseEnter={() => speech(item.title)}>
                             <Link href={item.href} legacyBehavior passHref>
                                 <NavigationMenuLink className={cn(navigationMenuTriggerStyle(), "bg-transparent")}>
                                     {item.title}

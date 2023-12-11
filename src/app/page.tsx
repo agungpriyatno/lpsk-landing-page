@@ -9,22 +9,11 @@ import { ContentCardA, ContentCardB } from '@/components/ui/content-card'
 import { ScrollArea } from '@/components/ui/scroll-area'
 import Image from 'next/image'
 import Link from 'next/link'
+import { useEffect } from 'react'
 
-const marqueeVariants = {
-  animate: {
-    x: [0, -1035],
-    transition: {
-      x: {
-        repeat: Infinity,
-        repeatType: "loop",
-        duration: 5,
-        ease: "linear",
-      },
-    },
-  },
-};
 
 export default function Home() {
+
   return (
     <main className='h-full w-screen space-y-3'>
       <CarouselSection />
@@ -36,7 +25,7 @@ export default function Home() {
               <a href="" className=' underline hover:text-orange-500'>Selengkapnya</a>
             </div>
             <div className='h-full w-full relative'>
-              <Image src={'https://picsum.photos/500/509'} alt='' fill className=' opacity-50 object-cover group-hover:scale-125 transition-all duration-300' />
+              <Image src={'https://picsum.photos/500/509'} alt='' fill sizes="100vw" className=' opacity-50 object-cover group-hover:scale-125 transition-all duration-300' />
             </div>
           </div>
           <div className='h-[250px] w-full bg-background bg-slate-900 rounded overflow-hidden relative group'>
@@ -45,7 +34,7 @@ export default function Home() {
               <a href="" className=' underline hover:text-orange-500'>Selengkapnya</a>
             </div>
             <div className='h-full w-full relative'>
-              <Image src={'https://picsum.photos/500/510'} alt='' fill className=' opacity-50 object-cover group-hover:scale-125 transition-all duration-300' />
+              <Image src={'https://picsum.photos/500/510'} alt='' fill sizes="100vw" className=' opacity-50 object-cover group-hover:scale-125 transition-all duration-300' />
             </div>
           </div>
           <div className='h-[250px] w-full bg-background bg-slate-900 rounded overflow-hidden relative group'>
@@ -54,7 +43,7 @@ export default function Home() {
               <a href="" className=' underline hover:text-orange-500'>Selengkapnya</a>
             </div>
             <div className='h-full w-full relative'>
-              <Image src={'https://picsum.photos/500/511'} alt='' fill className=' opacity-50 object-cover group-hover:scale-125 transition-all duration-300' />
+              <Image src={'https://picsum.photos/500/511'} alt='' fill sizes="100vw" className=' opacity-50 object-cover group-hover:scale-125 transition-all duration-300' />
             </div>
           </div>
           <div className='h-[250px] w-full bg-background bg-slate-900 rounded overflow-hidden relative group'>
@@ -63,7 +52,7 @@ export default function Home() {
               <a href="" className=' underline hover:text-orange-500'>Selengkapnya</a>
             </div>
             <div className='h-full w-full relative'>
-              <Image src={'https://picsum.photos/500/512'} alt='' fill className=' opacity-50 object-cover group-hover:scale-125 transition-all duration-300' />
+              <Image src={'https://picsum.photos/500/512'} alt='' fill sizes="100vw" className=' opacity-50 object-cover group-hover:scale-125 transition-all duration-300' />
             </div>
           </div>
         </div>
@@ -157,7 +146,7 @@ export default function Home() {
             <div className='flex gap-3'>
               <div className='flex-col w-[300px] flex-shrink-0 bg-background rounded overflow-hidden'>
                 <div className='h-[300px] w-full group relative overflow-hidden'>
-                  <Image src={'https://picsum.photos/500/512'} alt='' fill className=' object-cover group-hover:scale-125 transition-all duration-300' />
+                  <Image src={'https://picsum.photos/500/512'} alt='' fill sizes="100vw" className=' object-cover group-hover:scale-125 transition-all duration-300' />
                 </div>
                 <div className='flex flex-col p-5'>
                   <h4 className='font-bold text-base'>Penyandang Disabilitas Wajib Punya Hak yang Sama untuk Dilindungi</h4>
@@ -166,7 +155,7 @@ export default function Home() {
               </div>
               <div className='flex-col w-[300px] flex-shrink-0 bg-background rounded overflow-hidden'>
                 <div className='h-[300px] w-full group relative overflow-hidden'>
-                  <Image src={'https://picsum.photos/500/512'} alt='' fill className=' object-cover group-hover:scale-125 transition-all duration-300' />
+                  <Image src={'https://picsum.photos/500/512'} alt='' fill sizes="100vw" className=' object-cover group-hover:scale-125 transition-all duration-300' />
                 </div>
                 <div className='flex flex-col p-5'>
                   <h4 className='font-bold text-base'>LPSK, Komnas HAM, dan Komnas Perempuan Tandatangani Komitmen Lindungi dan Penuhi Hak Pembela HAM</h4>
@@ -175,7 +164,7 @@ export default function Home() {
               </div>
               <div className='flex-col w-[300px] flex-shrink-0 bg-background rounded overflow-hidden'>
                 <div className='h-[300px] w-full group relative overflow-hidden'>
-                  <Image src={'https://picsum.photos/500/512'} alt='' fill className=' object-cover group-hover:scale-125 transition-all duration-300' />
+                  <Image src={'https://picsum.photos/500/512'} alt='' fill sizes="100vw" className=' object-cover group-hover:scale-125 transition-all duration-300' />
                 </div>
                 <div className='flex flex-col p-5'>
                   <h4 className='font-bold text-base'>Putusan Permohonan Justice Collaborator MR Tersangka Pembunuhan di Subang</h4>
@@ -184,7 +173,7 @@ export default function Home() {
               </div>
               <div className='flex-col w-[300px] flex-shrink-0 bg-background rounded overflow-hidden'>
                 <div className='h-[300px] w-full group relative overflow-hidden'>
-                  <Image src={'https://picsum.photos/500/512'} alt='' fill className=' object-cover group-hover:scale-125 transition-all duration-300' />
+                  <Image src={'https://picsum.photos/500/512'} alt='' fill sizes="100vw" className=' object-cover group-hover:scale-125 transition-all duration-300' />
                 </div>
                 <div className='flex flex-col p-5'>
                   <h4 className='font-bold text-base'>140 Pendaftar Lolos Seleksi Administrasi Calon Anggota LPSK 2024-2029</h4>
@@ -193,7 +182,7 @@ export default function Home() {
               </div>
               <div className='flex-col w-[300px] flex-shrink-0 bg-background rounded overflow-hidden'>
                 <div className='h-[300px] w-full group relative overflow-hidden'>
-                  <Image src={'https://picsum.photos/500/512'} alt='' fill className=' object-cover group-hover:scale-125 transition-all duration-300' />
+                  <Image src={'https://picsum.photos/500/512'} alt='' fill sizes="100vw" className=' object-cover group-hover:scale-125 transition-all duration-300' />
                 </div>
                 <div className='flex flex-col p-5'>
                   <h4 className='font-bold text-base'>Judul Berita</h4>

@@ -16,7 +16,7 @@ export const ContentCardA = ({ title, description, url, image }: ContentCardProp
             <div className="max-w-[1440px] mx-auto">
                 <div className="grid grid-col-1 xl:grid-cols-2 gap-3">
                     {image != undefined && <div className="w-full h-[350px] relative group overflow-hidden rounded">
-                        <Image src={image} alt="" fill className="group-hover:scale-125 object-cover duration-300 transition-all" />
+                        <Image src={image} alt="" fill sizes="100vw" className="group-hover:scale-125 object-cover duration-300 transition-all" />
                     </div>}
                     <div className="flex flex-col justify-center gap-2">
                         <h3 className="text-xl font-bold">{title}</h3>

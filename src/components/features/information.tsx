@@ -21,12 +21,12 @@ export const Information = () => {
     return (
         <div className="bg-background w-full fixed left-0 right-0 bottom-0 z-50">
             <div className="flex">
-                <div className="px-3 py-2 bg-secondary">
+                <div className="px-3 py-3 bg-secondary">
                     INFORMASI
                 </div>
                 <div className="flex-1 overflow-hidden">
                     <motion.div
-                        className=" px-3 pt-2 flex gap-10"
+                        className=" px-3 py-3 flex gap-10"
                         variants={marqueeVariants}
                         animate="animate"
                     >
