@@ -5,12 +5,12 @@ import { Footer } from '@/components/features/footer'
 import { GallerySection } from '@/components/features/gallery'
 import { Information } from '@/components/features/information'
 import { CardLink } from '@/components/ui/card-link'
+import { PieChart } from '@/components/ui/chart'
 import { ContentCardA, ContentCardB } from '@/components/ui/content-card'
 import { ScrollArea } from '@/components/ui/scroll-area'
 import Image from 'next/image'
 import Link from 'next/link'
 import { useEffect } from 'react'
-
 
 export default function Home() {
 
@@ -191,6 +191,26 @@ export default function Home() {
               </div>
             </div>
           </ScrollArea>
+        </div>
+      </section>
+      <section className='px-5 xl:px-10 py-5 bg-background'>
+        <div className='max-w-[1440px] mx-auto gap-3 grid grid-cols-4 relative'>
+          <div className='flex flex-col gap-3 text-center'>
+            <h4 className='text-lg font-bold'>Perlindungan Pelanggaran HAM BERAT</h4>
+            <PieChart  />
+          </div>
+          <div className='flex flex-col gap-3 text-center'>
+            <h4 className='text-lg font-bold'>Tindak Pidana Korupsi</h4>
+            <PieChart type='KORUPSI'/>
+          </div>
+          <div className='flex flex-col gap-3 text-center'>
+            <h4 className='text-lg font-bold'>Tindak Pidana Penyiksaan</h4>
+            <PieChart type='PENYIKSAAN' />
+          </div>
+          <div className='flex flex-col gap-3 text-center'>
+            <h4 className='text-lg font-bold'>Kekerasan Terhadap Anak</h4>
+            <PieChart type='ANAK' />
+          </div>
         </div>
       </section>
       <GallerySection />

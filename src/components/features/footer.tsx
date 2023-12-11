@@ -8,6 +8,9 @@ import Link from "next/link"
 export const Footer = () => {
     return (
         <footer className='w-full bg-background'>
+            <div className="relative w-full h-[300px]">
+                <Image src={'/map.png'} alt="" fill className="object-cover"/>
+            </div>
             <div className="relative max-w-[1440px] mx-auto h-[300px] p-5">
                 <div className=" grid grid-cols-2 h-full">
                     <div className=" grid grid-cols-2">
@@ -37,9 +40,7 @@ export const Footer = () => {
                     </div>
                 </div>
             </div>
-            <div className="relative w-full h-[300px]">
-                <Image src={'/map.png'} alt="" fill className="object-cover"/>
-            </div>
+            
         </footer>
     )
 }
