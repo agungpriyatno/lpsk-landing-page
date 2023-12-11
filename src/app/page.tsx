@@ -1,113 +1,160 @@
+"use client"
+
+import { CarouselSection } from '@/components/features/carousel'
+import { Footer } from '@/components/features/footer'
+import { GallerySection } from '@/components/features/gallery'
+import { Information } from '@/components/features/information'
+import { CardLink } from '@/components/ui/card-link'
+import { ScrollArea } from '@/components/ui/scroll-area'
 import Image from 'next/image'
+import Link from 'next/link'
+
+const marqueeVariants = {
+  animate: {
+    x: [0, -1035],
+    transition: {
+      x: {
+        repeat: Infinity,
+        repeatType: "loop",
+        duration: 5,
+        ease: "linear",
+      },
+    },
+  },
+};
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">src/app/page.tsx</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:h-auto lg:w-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
+    <main className='h-full w-full space-y-3'>
+      <CarouselSection />
+      <section className='px-5 xl:px-10 py-5 text-slate-100'>
+        <div className=' grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-3 max-w-[1440px] mx-auto'>
+          <div className='h-[250px] w-full bg-background bg-slate-900 rounded overflow-hidden relative group '>
+            <div className='absolute bottom-0 left-0 right-0 z-10 p-2 text-center'>
+              <h3 className='font-bold'>SUBJEK PERLINDUNGAN</h3>
+              <a href="" className=' underline hover:text-orange-500'>Selengkapnya</a>
+            </div>
+            <div className='h-full w-full relative'>
+              <Image src={'https://picsum.photos/500/509'} alt='' fill className=' opacity-50 object-cover group-hover:scale-125 transition-all duration-300' />
+            </div>
+          </div>
+          <div className='h-[250px] w-full bg-background bg-slate-900 rounded overflow-hidden relative group'>
+            <div className='absolute bottom-0 left-0 right-0 z-10 p-2 text-center'>
+              <h3 className='font-bold'>SUBJEK PERLINDUNGAN</h3>
+              <a href="" className=' underline hover:text-orange-500'>Selengkapnya</a>
+            </div>
+            <div className='h-full w-full relative'>
+              <Image src={'https://picsum.photos/500/510'} alt='' fill className=' opacity-50 object-cover group-hover:scale-125 transition-all duration-300' />
+            </div>
+          </div>
+          <div className='h-[250px] w-full bg-background bg-slate-900 rounded overflow-hidden relative group'>
+            <div className='absolute bottom-0 left-0 right-0 z-10 p-2 text-center'>
+              <h3 className='font-bold'>SUBJEK PERLINDUNGAN</h3>
+              <a href="" className=' underline hover:text-orange-500'>Selengkapnya</a>
+            </div>
+            <div className='h-full w-full relative'>
+              <Image src={'https://picsum.photos/500/511'} alt='' fill className=' opacity-50 object-cover group-hover:scale-125 transition-all duration-300' />
+            </div>
+          </div>
+          <div className='h-[250px] w-full bg-background bg-slate-900 rounded overflow-hidden relative group'>
+            <div className='absolute bottom-0 left-0 right-0 z-10 p-2 text-center'>
+              <h3 className='font-bold'>SUBJEK PERLINDUNGAN</h3>
+              <a href="" className=' underline hover:text-orange-500'>Selengkapnya</a>
+            </div>
+            <div className='h-full w-full relative'>
+              <Image src={'https://picsum.photos/500/512'} alt='' fill className=' opacity-50 object-cover group-hover:scale-125 transition-all duration-300' />
+            </div>
+          </div>
         </div>
-      </div>
+      </section>
+      <section className='px-5 py-5'>
+        <div className=' max-w-[1440px] mx-auto space-y-3'>
+          <h3 className=" text-2xl font-bold">Aplikasi LPSK</h3>
+          <div className='grid grid-cols-4 gap-3'>
+            <div className='col-span-3 grid grid-cols-3 gap-3 '>
+              <CardLink title='SIMPUSAKO' description='Sistem Informasi Pelindungan Saksi dan Korban' redirectUrl='http://103.84.206.141/layanan' imageUrl='https://picsum.photos/500/500' />
+              <CardLink title='FONDASI' description='Tindak Lanjut Keputusan Rekomendasi' redirectUrl='https://layanan.lpsk.go.id/monev' imageUrl='https://picsum.photos/500/505' />
+              <CardLink title='SSK' description='Sahabat Saksi & Korban' redirectUrl='https://ssk.lpsk.go.id/' imageUrl='https://picsum.photos/500/504' />
+              <CardLink title='SIMPELKAN' description='Sistem Informasi Pelayanan Kantor' redirectUrl='/' imageUrl='https://picsum.photos/500/501' />
+              <CardLink title='LEMON' description='Deskripsi singkat mengenai fungsi Aplikasi ' redirectUrl='/' imageUrl='https://picsum.photos/500/502' />
+              <CardLink title='SP4N LAPOR' description='Layanan Aspirasi dan Pengaduan Online Rakyat' redirectUrl='/' imageUrl='https://picsum.photos/500/503' />
+            </div>
+            <div className='flex flex-col h-full gap-3'>
+              <h3 className=" text-xl font-bold">Kegiatan LPSK</h3>
+              <ScrollArea className='h-full'>
+                <div className='flex-1 flex flex-col gap-3'>
+                  <div className='bg-background rounded flex flex-row px-3 py-2 gap-3 place-items-center'>
+                    <div className='flex flex-col text-center'>
+                      <h5 className='text-lg font-bold leading-none'>18</h5>
+                      <small className='text-xs'>Februari</small>
+                      <small className='text-xs'>2022</small>
+                    </div>
+                    <div className='flex flex-col flex-1'>
+                      <h6 className='font-bold'>Penyerahan Kompensasi</h6>
+                      <p className='text-xs'>Kantor Pemerintah Provinsi Bali</p>
+                    </div>
+                  </div>
+                  <div className='bg-background rounded flex flex-row px-3 py-2 gap-3 place-items-center'>
+                    <div className='flex flex-col text-center'>
+                      <h5 className='text-lg font-bold leading-none'>17</h5>
+                      <small className='text-xs'>Maret</small>
+                      <small className='text-xs'>2023</small>
+                    </div>
+                    <div className='flex flex-col flex-1'>
+                      <h6 className='font-bold'>Lorem ipsum dolor sit</h6>
+                      <p className='text-xs'>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Mollitia, sequi!</p>
+                    </div>
+                  </div>
+                  <div className='bg-background rounded flex flex-row px-3 py-2 gap-3 place-items-center'>
+                    <div className='flex flex-col text-center'>
+                      <h5 className='text-lg font-bold leading-none'>17</h5>
+                      <small className='text-xs'>Maret</small>
+                      <small className='text-xs'>2023</small>
+                    </div>
+                    <div className='flex flex-col flex-1'>
+                      <h6 className='font-bold'>Lorem ipsum dolor sit</h6>
+                      <p className='text-xs'>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Mollitia, sequi!</p>
+                    </div>
+                  </div>
+                  <div className='bg-background rounded flex flex-row px-3 py-2 gap-3 place-items-center'>
+                    <div className='flex flex-col text-center'>
+                      <h5 className='text-lg font-bold leading-none'>17</h5>
+                      <small className='text-xs'>Maret</small>
+                      <small className='text-xs'>2023</small>
+                    </div>
+                    <div className='flex flex-col flex-1'>
+                      <h6 className='font-bold'>Lorem ipsum dolor sit</h6>
+                      <p className='text-xs'>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Mollitia, sequi!</p>
+                    </div>
+                  </div>
+                  <div className='bg-background rounded flex flex-row px-3 py-2 gap-3 place-items-center'>
+                    <div className='flex flex-col text-center'>
+                      <h5 className='text-lg font-bold leading-none'>17</h5>
+                      <small className='text-xs'>Maret</small>
+                      <small className='text-xs'>2023</small>
+                    </div>
+                    <div className='flex flex-col flex-1'>
+                      <h6 className='font-bold'>Lorem ipsum dolor sit</h6>
+                      <p className='text-xs'>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Mollitia, sequi!</p>
+                    </div>
+                  </div>
+                </div>
+              </ScrollArea>
+            </div>
+          </div>
+        </div>
+      </section>
+      <GallerySection />
+      <Footer />
+      <Information/>
+      {/* <div className='fixed bottom-0 left-0 right-0 bg-background z-50'>
+        <div className='flex'>
+          <div className='px-3 py-2 bg-secondary'>INFORMASI</div>
+          <div className='flex-1 px-3 py-2'>
 
-      <div className="relative flex place-items-center before:absolute before:h-[300px] before:w-[480px] before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-[240px] after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 before:lg:h-[360px] z-[-1]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
-
-      <div className="mb-32 grid text-center lg:max-w-5xl lg:w-full lg:mb-0 lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Docs{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Learn{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Templates{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Explore starter templates for Next.js.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Deploy{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
+          </div>
+        </div>
+      </div> */}
     </main>
   )
 }
