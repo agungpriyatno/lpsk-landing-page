@@ -19,7 +19,7 @@ const marqueeVariants = {
 
 export const Information = () => {
     return (
-        <div className="bg-background w-full fixed left-0 right-0 bottom-0">
+        <div className="bg-background w-full fixed left-0 right-0 bottom-0 z-50">
             <div className="flex">
                 <div className="px-3 py-2 bg-secondary">
                     INFORMASI

@@ -32,7 +32,7 @@ export default function RootLayout({
         >
 
           <Header />
-          <ScrollArea>
+          <ScrollArea className='w-full'>
             {children}
           </ScrollArea>
           {/* <section className='fixed bottom-0 left-0 right-0 bg-background flex'>

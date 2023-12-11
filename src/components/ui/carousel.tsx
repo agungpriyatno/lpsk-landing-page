@@ -60,11 +60,6 @@ const titleSlideVariant = {
 export const CarouselLoading = () => {
     return (
         <Skeleton className="w-full h-screen relative bg-slate-800  text-slate-100  group overflow-hidden">
-            <div className="w-full h-full relative group-hover:scale-125 transition-all duration-500">
-            </div>
-            <div className=" bsolute left-0 top-0 h-full w-full flex flex-col justify-end px-10 py-20">
-            </div>
-
             <Button size={'icon'} variant={'ghost'} className="absolute left-10 top-1/2 translate-y-1/2" >
                 <ChevronLeft />
             </Button>
@@ -106,7 +101,7 @@ export const Carousel = ({ images }: { images: TCarouselItem[] }) => {
             <AnimatePresence>
                 <div className="w-full h-full relative group-hover:scale-125 transition-all duration-500">
                     <motion.img
-                        className="w-full h-full opacity-40 object-fill"
+                        className="w-full h-full opacity-40 object-cover"
                         key={currentIndex}
                         src={images[currentIndex].image}
                         variants={slideVariants}
