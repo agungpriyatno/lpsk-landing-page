@@ -5,6 +5,7 @@ import { Footer } from '@/components/features/footer'
 import { GallerySection } from '@/components/features/gallery'
 import { Information } from '@/components/features/information'
 import { CardLink } from '@/components/ui/card-link'
+import { ContentCardA, ContentCardB } from '@/components/ui/content-card'
 import { ScrollArea } from '@/components/ui/scroll-area'
 import Image from 'next/image'
 import Link from 'next/link'
@@ -144,17 +145,11 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <section className='px-5 xl:px-10 py-5 bg-background'>
-        <div className='max-w-[1440px] mx-auto grid grid-cols-2 gap-3'>
-          <div className='w-full h-[300px] relative'>
-            <Image src={'https://picsum.photos/500/520'} alt='' fill className='object-cover'/>
-          </div>
-          <div className='flex flex-col justify-center overflow-hidden'>
-            <h3 className=' font-bold text-xl'>Tentang LPSK</h3>
-            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Consequatur reprehenderit quasi impedit quisquam rerum dolore soluta ratione ad harum facere. Maiores temporibus necessitatibus quo, autem veniam aliquid ipsa laboriosam adipisci.</p>
-          </div>
-        </div>
-      </section>
+      <ContentCardA
+        title='Tentang LPSK'
+        description='LPSK yang diberikan mandat oleh undang-undang selaku focal point dalam pemberian perlindungan saksi dan korban harus mampu mewujudkan suatu kondisi dimana saksi dan korban benar-benar merasa terlindungi dan dapat mengungkap kasus dalam peradilan pidana.'
+        image='https://picsum.photos/500/520'
+        url='https://picsum.photos/500/520' />
       <section className='px-5 xl:px-10 py-5'>
         <div className='flex flex-col max-w-[1440px] mx-auto gap-3'>
           <h3 className=" text-2xl font-bold">Berita LPSK</h3>
